@@ -52,7 +52,7 @@ src/
 ## Características Clave (Showcase)
 
 ### 1. Gestión de Estado (Deep Dive)
-En la sección `/deep-dive`, se implementa una demostración técnica de gestión de estado combinando `useState` para estado local y `Context API` para estado global (Tema UI). Simula operaciones asíncronas con feedback visual (loaders, optimistic updates).
+En la sección `/deep-dive`, se implementa una demostración técnica de gestión de estado combinando `useState` para estado local y `Context API` para estado global (Tema UI). Simula operaciones[...]
 
 ### 2. Custom Hooks
 El hook `useAsync` encapsula la lógica repetitiva de manejo de carga y errores en peticiones HTTP, manteniendo los componentes limpios (Clean Code).
@@ -60,6 +60,6 @@ El hook `useAsync` encapsula la lógica repetitiva de manejo de carga y errores 
 ### 3. Responsive Design
 Uso extensivo de breakpoints de Tailwind (`md:`, `lg:`) para asegurar una experiencia fluida desde móviles hasta monitores de escritorio.
 
----<img width="2048" height="2389" alt="ArPCvB" src="https://github.com/user-attachments/assets/cebcfdb8-f165-4dba-a7ed-cb1463cfe350" />
+---
 
-
+<img width="300" alt="ArPCvB" src="https://github.com/user-attachments/assets/cebcfdb8-f165-4dba-a7ed-cb1463cfe350" />
