@@ -58,7 +58,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="mt-12">
+            <div className="mt-12 text-center">
               <p className="text-blue-200 text-sm mb-4">
                 Escanea el código QR para conectar en LinkedIn o búscame como <strong>danielcuadradomasero</strong>.
               </p>
