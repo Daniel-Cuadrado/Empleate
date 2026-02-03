@@ -1,17 +1,72 @@
-import React from 'react';
-import { Server, Layout, Database, Shield, GitBranch, Terminal } from 'lucide-react';
+import React, { useState } from 'react';
+import { Server, Layout, Database, Shield, GitBranch, Terminal, ChevronLeft, ChevronRight } from 'lucide-react';
 
 /* 
   DEEP DIVE: CRM EMPRESARIAL FULL STACK
-  
-  Esta sección analiza en profundidad la arquitectura del proyecto principal,
-  destacando decisiones técnicas de backend y frontend.
 */
 
+const slides = [
+  { url: '/images/crm-login.png', title: 'Carrito de Compras' },
+  { url: '/images/crm-dashboard.png', title: 'Login Seguro' },
+  { url: '/images/crm-cart.png', title: 'Dashboard de Métricas' },
+];
+
 const DeepDive = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentSlide === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentSlide - 1;
+    setCurrentSlide(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentSlide === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentSlide + 1;
+    setCurrentSlide(newIndex);
+  };
+
   return (
     <div className="transition-colors duration-300 min-h-[calc(100vh-64px)] bg-gray-50 text-gray-900">
       <div className="max-w-5xl mx-auto px-4 py-12">
+        
+        {/* Carousel Section */}
+        <div className="mb-16 relative group">
+          <div className="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl relative bg-gray-900 border border-gray-200">
+             <img 
+               src={slides[currentSlide].url} 
+               alt={slides[currentSlide].title}
+               className="w-full h-full object-contain duration-500 ease-in-out"
+             />
+             
+              {/* Overlay Gradient */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+                <p className="text-white text-xl font-bold">{slides[currentSlide].title}</p>
+              </div>
+          </div>
+          
+          {/* Left Arrow */}
+          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer hover:bg-black/40 transition-all">
+            <ChevronLeft onClick={prevSlide} size={30} />
+          </div>
+          
+          {/* Right Arrow */}
+          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer hover:bg-black/40 transition-all">
+            <ChevronRight onClick={nextSlide} size={30} />
+          </div>
+
+          {/* Dots */}
+          <div className="flex top-4 justify-center py-2 gap-2 absolute w-full">
+            {slides.map((slide, slideIndex) => (
+              <div
+                key={slideIndex}
+                onClick={() => setCurrentSlide(slideIndex)}
+                className={`text-2xl cursor-pointer h-2 w-2 rounded-full transition-all ${currentSlide === slideIndex ? 'bg-white w-4' : 'bg-white/50'}`}
+              ></div>
+            ))}
+          </div>
+        </div>
+
         {/* Header */}
         <div className="flex justify-between items-start mb-12">
           <div>
