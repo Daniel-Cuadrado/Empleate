@@ -1,0 +1,27 @@
+# Architecture Pitch: "Professional Frontend Showcase"
+
+## 1. Why this React Showcase? (Multiplatform Approach)
+Aunque mi perfil técnico (DAM) tiene un fuerte componente en **Angular** y **Java (Spring Boot)**, he elegido **React** para este showcase intencionalmente para demostrar **versatilidad**.
+- **Adaptabilidad**: Como desarrollador multiplataforma, entiendo que los conceptos de arquitectura basada en componentes, gestión de estado y ciclo de vida son transferibles entre frameworks (Angular <-> React).
+- **Proactividad**: Aprender y desplegar un proyecto en React demuestra mi capacidad de aprender nuevas tecnologías rápidamente, una soft-skill crítica en el entorno laboral actual.
+
+## 2. Why this Structure? (Clean Architecture Lite)
+Organizar el código en `components/`, `pages/`, `hooks/` y `services/` no es capricho, es una declaración de intenciones sobre **Separation of Concerns (SoC)**.
+
+- **UI vs Logic**: Los componentes en `pages/` actúan como orquestadores ("Smart Components"), mientras que en `components/` residen piezas puramente visuales y reutilizables ("Dumb Components").
+- **Services Layer**: Abstraer las llamadas a API en `services/` permite cambiar el backend (REST a GraphQL o Mock) sin tocar ni una línea de la UI. Esto demuestra previsión de mantenibilidad.
+- **Custom Hooks**: Extraer lógica en `hooks/` (como `useAsync` o `useAuth`) evita el "Spaghetti Code" dentro de los componentes y facilita el testing unitario de la lógica de negocio aislada.
+
+## 2. State Management Strategy
+Para este showcase, evité librerías pesadas como Redux a propósito para evitar sobre-ingeniería (Over-engineering).
+- **Context API**: Se usa para estado *global* y de *baja frecuencia* de actualización (como el Tema Dark/Light o Autenticación).
+- **React State (useState/useReducer)**: Para estado local y efímero (formularios, toggles).
+- **Server State**: En una app real usaría React Query, pero aquí simulo el patrón con `useEffect` y servicios para demostrar que entiendo el ciclo de vida de los datos asíncronos.
+
+## 3. Performance & UX Decisions
+- **Vite**: Elegido sobre CRA por la velocidad de desarrollo y menor tamaño del bundle final.
+- **Tailwind CSS**: Permite iterar rápido sin salir del HTML, elimina el CSS muerto (dead code elimination) en producción y asegura consistencia en el diseño (Design System tokens).
+- **Code Splitting**: La estructura de rutas permite implementar `React.lazy` fácilmente en el futuro si la app crece.
+
+## 4. Conclusion
+Este proyecto no es solo "código que funciona", es "código listo para escalar". Demuestra que como Junior/Mid entiendo no solo el *cómo* escribir React, sino *dónde* poner cada pieza para que el equipo (y yo mismo en 6 meses) pueda trabajar eficientemente.
