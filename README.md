@@ -60,5 +60,6 @@ El hook `useAsync` encapsula la lógica repetitiva de manejo de carga y errores 
 ### 3. Responsive Design
 Uso extensivo de breakpoints de Tailwind (`md:`, `lg:`) para asegurar una experiencia fluida desde móviles hasta monitores de escritorio.
 
----
-*Este proyecto fue generado para demostrar un perfil Senior Frontend en menos de 5 minutos de revisión.*
+---<img width="2048" height="2389" alt="ArPCvB" src="https://github.com/user-attachments/assets/cebcfdb8-f165-4dba-a7ed-cb1463cfe350" />
+
+
